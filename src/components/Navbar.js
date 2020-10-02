@@ -3,26 +3,32 @@ import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import Products from "../pages/Products";
+import {
+  StyledNavbar,
+  StyledNavLogo,
+  StyledNavItems,
+  StyledLink,
+} from "../styled/Navbar";
 
 export default function Navbar() {
   return (
     <Router>
-      <nav>
-        <div>
+      <StyledNavbar>
+        <StyledNavLogo>
           <Link to="/">LOGO</Link>
-        </div>
-        <ul>
+        </StyledNavLogo>
+        <StyledNavItems>
           <li>
-            <Link to="/">Strona Główna</Link>
+            <StyledLink to="/">Strona Główna</StyledLink>
           </li>
           <li>
-            <Link to="/products">Produkty</Link>
+            <StyledLink to="/products">Produkty</StyledLink>
           </li>
           <li>
-            <Link to="/contact">Kontakt</Link>
+            <StyledLink to="/contact">Kontakt</StyledLink>
           </li>
-        </ul>
-      </nav>
+        </StyledNavItems>
+      </StyledNavbar>
 
       <Switch>
         <Route path="/contact">
